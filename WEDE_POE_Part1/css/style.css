@@ -1,0 +1,402 @@
+/* ==========================================
+   1. BASE STYLES & CSS RESET
+   ========================================== */
+
+/* Removes default spacing and makes sizing easier to control */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Variables - used to keep colours and fonts consistent */
+:root {
+    --primary-color: #0d1117;
+    --accent-teal: #00f2fe;
+    --card-bg: #161b22;
+    --text-main: #f0f6fc;
+    --text-muted: #8b949e;
+    --border-color: #30363d;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Basic HTML settings */
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+/* Main body styling */
+body {
+    font-family: var(--font-family);
+    background-color: var(--primary-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+
+    /* Flexbox helps keep the footer at the bottom */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   2. TYPOGRAPHY
+   ========================================== */
+
+/* Main headings */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Secondary headings */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Smaller headings */
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+
+/* ==========================================
+   3. NAVIGATION & HEADER
+   ========================================== */
+
+/* Header and navigation layout */
+nav,
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #090d16;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Website logo */
+.logo a,
+nav h2 {
+    color: var(--accent-teal);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation list */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+/* Navigation links */
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Navigation hover and active effects */
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-teal);
+}
+
+
+
+/* ==========================================
+   4. PAGE LAYOUT & HERO SECTION
+   ========================================== */
+
+/* Main content area */
+.page-main {
+    flex: 1;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Home page hero section */
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    background: linear-gradient(
+        180deg,
+        #090d16 0%,
+        var(--primary-color) 100%
+    );
+}
+
+/* Page headings on internal pages */
+.page-header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* Limits the width of introductory paragraphs */
+.page-header p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==========================================
+   5. GRID LAYOUT & CARDS
+   ========================================== */
+
+/* Creates responsive grids for courses and content */
+.services-container,
+.programmes-container,
+.about-content,
+.contact-grid {
+    display: grid;
+
+    /* Automatically adjusts the number of columns */
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+    );
+
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Individual content cards */
+.card-tech {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+
+    /* Adds a small shadow around cards */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    /* Smooth hover animation */
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Card hover effect */
+.card-tech:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-teal);
+}
+
+
+/* ==========================================
+   6. COURSE DETAILS
+   ========================================== */
+
+/* Course level badge */
+.badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.75rem;
+
+    background-color: var(--accent-teal);
+    color: #000;
+
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Course description */
+.description {
+    margin-bottom: 1rem;
+}
+
+/* Course information */
+.course-details {
+    margin-bottom: 1.25rem;
+}
+
+.course-details p {
+    margin-bottom: 0.5rem;
+}
+
+
+/* ==========================================
+   7. FORMS & BUTTONS
+   ========================================== */
+
+/* Form group layout */
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form labels */
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Form input fields */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+
+    background-color: #0d1117;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+
+    color: var(--text-main);
+    font-family: inherit;
+}
+
+/* Form focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-teal);
+}
+
+/* Buttons and enquiry links */
+.btn-tech,
+.button {
+    display: inline-block;
+
+    padding: 0.75rem 1.5rem;
+
+    background-color: var(--accent-teal);
+    color: #000;
+
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: opacity 0.3s ease;
+}
+
+/* Button hover effect */
+.btn-tech:hover,
+.button:hover {
+    opacity: 0.85;
+}
+
+
+/* ==========================================
+   8. RESPONSIVE DESIGN
+   ========================================== */
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 768px) {
+
+    /* Stack navigation items vertically */
+    nav,
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    /* Reduce heading sizes */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Reduce the grid card minimum width */
+    .services-container,
+    .programmes-container,
+    .about-content,
+    .contact-grid {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 480px) {
+
+    /* Stack navigation links vertically */
+    .nav-links {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    /* Put cards into one column */
+    .services-container,
+    .programmes-container,
+    .about-content,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce page spacing on small screens */
+    .page-main {
+        padding: 1rem 3%;
+    }
+
+    /* Make the hero section smaller on mobile */
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    /* Make the logo slightly smaller */
+    .logo a,
+    nav h2 {
+        font-size: 1.25rem;
+    }
+
+    /* Prevent headings from becoming too large */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* ==========================================
+   9. FOOTER
+   ========================================== */
+
+/* Footer styling */
+footer,
+.footer-tech {
+    text-align: center;
+    padding: 1.5rem;
+
+    background-color: #090d16;
+    border-top: 1px solid var(--border-color);
+
+    /* Keeps footer at the bottom of the page */
+    margin-top: auto;
+}
