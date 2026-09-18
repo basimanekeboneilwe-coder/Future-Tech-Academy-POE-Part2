@@ -38,6 +38,8 @@ All notable changes made to the Future Tech Academy website are documented in th
 - Added comments throughout the HTML and CSS code to make the code easier to understand.
 - Improved keyboard focus visibility for navigation links and buttons.
 - Updated the README to document the final website.
+-fixed my budget on my proposal
+-fixed my target audience age on my proposal
 
 ### Tested
 
